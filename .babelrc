@@ -9,6 +9,9 @@
 // }
 {
   "env": {
+    "dev": {
+      "presets": ["es2015", "react", "stage-0"]
+    },
     "development": {
       "plugins": [
         ["import", { "libraryName": "antd", "style": "css" }] // `style: true` 会加载 less 文件
