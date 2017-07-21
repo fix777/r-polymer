@@ -1,7 +1,7 @@
 .DS_Store
 build
 dist
-components_temp
+es
 lib
 node_modules
 *.log

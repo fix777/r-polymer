@@ -14,7 +14,7 @@ const loopEntries = (curPath, basePath, entries, merged = []) => {
     const isFile = fs.statSync(childEntryPath).isFile();
     if (isFile) return merged.push([ curPath, childEntryPath ]);
     // directory
-    furtherChildEnties = fs.readdirSync(childEntryPath);
+    const furtherChildEnties = fs.readdirSync(childEntryPath);
     return loopEntries(`${curPath}/${childEntry}`, path.resolve(basePath, childEntry), furtherChildEnties, merged);
   });
   return merged;
@@ -28,8 +28,7 @@ const tsxEntries =
 
       if (curPath.includes("index")) {
         compEntries.push([ "index", basePath ]);
-      }
-      else {
+      } else {
         // console.log(fs.readdirSync(basePath));
         const childEntries = fs.readdirSync(basePath);
         compEntries = loopEntries(curPath, basePath, childEntries);

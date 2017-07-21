@@ -1,5 +1,5 @@
 .babelrc
-components_temp
+components
 src
 typings
 CODE_OF_CONDUCT.md

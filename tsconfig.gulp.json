@@ -2,7 +2,10 @@
   "compilerOptions": {
     "outDir": "./components/",
     "allowSyntheticDefaultImports": true,
+    "module": "es6",
+    "target": "es6",
     "allowJs": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "moduleResolution": "node"
   }
 }

@@ -1,6 +1,41 @@
 import * as webpack from "webpack";
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
+import * as fs from "fs";
 import * as path from "path";
+
+const sourcePath = path.resolve(__dirname, "src/components");
+const tsxPaths = fs.readdirSync(sourcePath);
+
+const loopEntries = (curPath, basePath, entries, merged = {}) => {
+  entries.forEach(childEntry => {
+    const childEntryPath = path.resolve(basePath, childEntry);
+    const isFile = fs.statSync(childEntryPath).isFile();
+    if (isFile) return merged = { ...merged, ...{ [curPath]: childEntryPath } };
+    // directory
+    const furtherChildEnties = fs.readdirSync(childEntryPath);
+    return loopEntries(`${curPath}/${childEntry}`, path.resolve(basePath, childEntry), furtherChildEnties, merged);
+  });
+  return merged;
+};
+
+const tsxEntries =
+  tsxPaths.reduce(
+    (entries, curPath) => {
+      let compEntries = {};
+      const basePath = path.resolve(sourcePath, curPath);
+
+      if (curPath.includes("index")) {
+        compEntries = { ...compEntries, ...{ index: basePath } };
+      } else {
+        // console.log(fs.readdirSync(basePath));
+        const childEntries = fs.readdirSync(basePath);
+        compEntries = { ...compEntries, ...loopEntries(curPath, basePath, childEntries) };
+      }
+
+      return {...entries, ...compEntries};
+    },
+    {}
+  );
 
 const config: webpack.Configuration = {
   context: path.resolve(__dirname),

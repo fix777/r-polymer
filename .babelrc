@@ -1,6 +1,24 @@
+// {
+//   "plugins": [
+//     // ["babel-plugin-import", { "libraryName": "antd", "style": "css" }] // `style: true` 会加载 less 文件
+//   ],
+//   "presets": [
+//     "es2015",
+//     "react"
+//   ]
+// }
 {
-  "presets": [
-    "es2015",
-    "react"
-  ]
+  "env": {
+    "development": {
+      "plugins": [
+        ["import", { "libraryName": "antd", "style": "css" }] // `style: true` 会加载 less 文件
+      ]
+    },
+    "test": {
+      "presets": ["es2015", "react", "stage-0"],
+      "plugins": [
+        "add-module-exports"
+      ]
+    }
+  }
 }
