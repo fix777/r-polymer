@@ -12,7 +12,7 @@
     "compile": "antd-tools run compile",
     "dist": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "antd-tools run guard"
+    "prepublish": "antd-tools run compile"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.1",
     "@types/webpack": "^3.0.4",
-    "antd": "^2.12.1",
     "antd-tools": "^1.6.0",
     "awesome-typescript-loader": "^3.2.1",
     "babel-cli": "^6.24.1",
@@ -51,5 +50,7 @@
     "typescript": "^2.4.1",
     "webpack": "^3.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "antd": "^2.12.1"
+  }
 }
