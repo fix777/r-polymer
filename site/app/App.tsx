@@ -1,11 +1,14 @@
 import React from "react";
+
 import { CascadeTransfer } from "./../../lib";
 
+import "./../style/app.css";
+
 export default class App extends React.Component {
-  render() {
+  public render() {
     return (
-      <div>
-        <h1>hello</h1>
+      <div className="app">
+        <h1>hello, world</h1>
         <CascadeTransfer />
       </div>
     );

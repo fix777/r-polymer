@@ -1,6 +1,7 @@
 .DS_Store
 build
 dist
+_site
 es
 lib
 node_modules
