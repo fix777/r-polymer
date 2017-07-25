@@ -9,7 +9,7 @@
     "es"
   ],
   "scripts": {
-    "dev": "yarn webpack-dev-server -- --env.env=dev",
+    "dev": "yarn compile && yarn webpack-dev-server -- --env.env=dev",
     "webpack-dev-server": "BABEL_ENV=dev webpack-dev-server --port=7777 --hot --config webpack.config.ts",
     "build:watch:dev": "yarn build:dev -- --watch --env.env=dev",
     "build:dev": "BABEL_ENV=dev yarn build --",
@@ -46,6 +46,8 @@
     "clean-webpack-plugin": "^0.1.16",
     "html-webpack-plugin": "^2.29.0",
     "html-webpack-template": "^5.6.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -58,6 +60,6 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "antd": "^2.12.1"
+    "antd": "^2.12.2"
   }
 }

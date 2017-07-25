@@ -1,3 +1,16 @@
-.rantd-button {
-    outline: solid 5px #2370b3;
+@import "./../../style/themes/default";
+
+@cascade-transfer-prefix-cls: ~"@{r-polymer-prefix}-cascade-transfer";
+
+.@{cascade-transfer-prefix-cls} {
+  // & > .ant-row + .ant-row {
+  //   margin-top: 4px;
+  // }
+  .ant-col {
+    padding-bottom: 4px;
+  }
+
+  .ant-transfer .ant-transfer-list {
+    width: calc(~"(100% - 45px) / 2");
+  }
 }
