@@ -1,2 +1,2 @@
-import CascadeTransfer from "./CascadeTransfer";
+import CascadeTransfer from "./cascade-transfer";
 export default CascadeTransfer;

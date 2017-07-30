@@ -27,6 +27,7 @@ export interface CascadeTransferProps {
   selectsRowProps?: AntdRowProps.RowProps;
   selectsColProps?: AntdColProps.ColProps;
   selects: CascadeTransferSelect[];
+  showTransfer?: boolean;
   transferProps: AntdTransferProps.TransferProps;
 }
 
@@ -44,6 +45,7 @@ class CascadeTransfer extends React.Component<CascadeTransferProps> {
       lg: 6,
       xl: 4,
     },
+    showTransfer: true,
   };
 
   public render() {
@@ -56,6 +58,7 @@ class CascadeTransfer extends React.Component<CascadeTransferProps> {
       selectsRowProps,
       selectsColProps,
       selects,
+      showTransfer,
       transferProps,
       // ...others,
     } = this.props;
@@ -93,11 +96,15 @@ class CascadeTransfer extends React.Component<CascadeTransferProps> {
             ))
           }
         </Row>
-        <Row>
-          <Col span={24}>
-            <Transfer {...transferProps} />
-          </Col>
-        </Row>
+        {
+          showTransfer && (
+            <Row>
+              <Col span={24}>
+                <Transfer {...transferProps} />
+              </Col>
+            </Row>
+          )
+        }
       </div>
     );
   }

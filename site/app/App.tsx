@@ -110,6 +110,7 @@ export default class App extends React.Component {
               ],
             },
           ]}
+          showTransfer={false}
           transferProps={{
             dataSource: [],
             targetKeys: [],
