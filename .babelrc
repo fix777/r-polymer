@@ -10,7 +10,10 @@
 {
   "env": {
     "dev": {
-      "presets": ["es2015", "react", "stage-0"]
+      "presets": ["es2015", "react", "stage-0"],
+      "plugins": [
+        ["import", { "libraryName": "antd", "style": "css" }] // `style: true` 会加载 less 文件
+      ]
     },
     "development": {
       "plugins": [

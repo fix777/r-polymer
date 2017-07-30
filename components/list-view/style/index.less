@@ -1,0 +1,49 @@
+@import "./../../style/themes/default";
+
+@list-view-prefix-cls: ~"@{r-polymer-prefix}-list-view";
+@title-prefix-cls: ~"@{r-polymer-prefix}-title";
+@step-prefix-cls: ~"@{r-polymer-prefix}-step";
+
+.@{list-view-prefix-cls} {
+  // &&-wrapper {
+    // border: 1px dashed teal;
+  // }
+
+  & > * + * {
+    margin-top: 30px;
+  }
+}
+
+.mixin-base-title {
+  display: inline-block;
+  padding: 4px 8px;
+  font: bolder 14px/1 sans-serif;
+  // border: 1px dashed;
+}
+
+.@{title-prefix-cls} {
+  & > & + & {
+    margin-left: 4px;
+  }
+
+  &&-wrapper {
+    padding: 0 8px;
+  }
+
+  &&-major {
+    .mixin-base-title;
+    color: @black-primary;
+  }
+
+  &&-sub {
+    .mixin-base-title;
+    color: @black-secondary;
+    font-size: 13px;
+  }
+}
+
+.@{step-prefix-cls} {
+  &&-wrapper {
+    padding: 0 14px;
+  }
+}
