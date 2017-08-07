@@ -9,7 +9,7 @@
     "es"
   ],
   "scripts": {
-    "dev": "yarn compile && yarn webpack-dev-server -- --env.env=dev",
+    "dev": "yarn webpack-dev-server -- --env.env=dev",
     "webpack-dev-server": "BABEL_ENV=dev webpack-dev-server --port=7777 --hot --config webpack.config.ts",
     "build:watch:dev": "yarn build:dev -- --watch --env.env=dev",
     "build:dev": "BABEL_ENV=dev yarn build --",

@@ -1,0 +1,51 @@
+@import "./../../style/themes/default";
+
+@list-info-prefix-cls: ~"@{r-polymer-prefix}-list-info";
+
+.mixin-item {
+  min-width: 25%;
+  max-width: 100%;
+  width: ~"calc(480px * 480 - 100% * 480)";
+  padding: 4px;
+  display: flex;
+}
+
+.@{list-info-prefix-cls} {
+  &&-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  &&-item {
+    .mixin-item;
+  }
+
+  &&-item > &&-title {
+    // background: teal;
+    min-width: 50px;
+    width: 20%;
+    text-align: right;
+    font: bold 12px/2 sans-serif;
+    color: @black-primary;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+  }
+
+  &&-item > &&-text {
+    // background: darken(pink, 5%);
+    padding: 0 4px;
+    width: 80%;
+    font: 12px/2 sans-serif;
+    color: @black-secondary;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+  }
+
+  // &&-item > &&-text&-expanded {
+  //   white-space: normal;
+  //   word-wrap: break-word;
+  // }
+}
