@@ -5,7 +5,8 @@ import Step from "./step";
 import Collapse from "./collapse";
 import { ListViewItem } from "./list-view";
 
-export function renderItem(listViewItem: ListViewItem, index: number) {
+export function renderItem(listViewItem: ListViewItem | null, index: number) {
+  if (!listViewItem) return null;
   const { type, ...others } = listViewItem;
   const props = { key: `${type}-${index}`, ...others };
   switch (type) {
