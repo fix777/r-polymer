@@ -19,11 +19,11 @@ export interface ListViewProps {
 }
 
 export class ListView extends React.Component<ListViewProps> {
-  public static defaultProps: Partial<ListViewProps> = {
+  static defaultProps: Partial<ListViewProps> = {
     prefixCls: "r-polymer-list-view",
   };
 
-  public render() {
+  render() {
     const {
       style,
       className,

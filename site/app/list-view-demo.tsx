@@ -11,7 +11,7 @@ import { ListView } from "./../../lib";
 import "./../style/app.css";
 
 export default class ListViewDemo extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="app">
         <ListView

@@ -4,3 +4,36 @@
 @r-polymer-prefix: r-polymer;
 
 @primary-color: @blue-primary;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.@{r-polymer-prefix}-text-color_weak {
+  color: @text-color_weak;
+}
+
+.@{r-polymer-prefix}-text-align_left {
+  text-align: left;
+}
+
+.@{r-polymer-prefix}-text-align_right {
+  text-align: right;
+}
+
+.@{r-polymer-prefix}-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,32 @@
+@import "./../../style/themes/default";
+
+@tile-prefix-cls: ~"@{r-polymer-prefix}-tile";
+@tile-detail: ~"@{tile-prefix-cls}-detail";
+
+.@{tile-prefix-cls} {
+  &&-wrap {
+    .@{tile-detail} {
+      dl {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+
+        dt {
+          width: 30%;
+          padding-right: 0.75rem;
+          cursor: default;
+        }
+
+        dd {
+          margin: 0;
+          width: 70%;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.@{tile-prefix-cls}-popover-wrap {
+  max-width: 10rem;
+}

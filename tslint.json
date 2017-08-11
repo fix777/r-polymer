@@ -10,7 +10,8 @@
         "max-line-length": [true, 160],
         "triple-equals": [false],
         "interface-name": [false],
-        "arrow-parens": [true, "ban-single-arg-parens"]
+        "arrow-parens": [true, "ban-single-arg-parens"],
+        "member-access": [true, "no-public"]
     },
     "rulesDirectory": []
 }

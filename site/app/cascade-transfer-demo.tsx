@@ -9,7 +9,7 @@ import "./../../lib/cascade-transfer/style/index.css";
 // import "./../style/app.css";
 
 export default class CascadeTransferDemo extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="app">
         <CascadeTransfer
